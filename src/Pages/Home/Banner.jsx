@@ -15,13 +15,15 @@ const Banner = () => {
         pagination={{ clickable: true }}
     >
       <SwiperSlide>
-        <img className='' src={'https://i.ibb.co/MB8hzgC/slider1.jpg'} alt="" />
+        <img className='' src={'https://i.ibb.co/X2ZzkBx/library.jpg'} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={'https://i.ibb.co/kyMrcWV/slider2.jpg'} alt="" />
+      
+        <img src={'https://i.ibb.co/BcZHCGY/pexels-hu-nh-t-2098691-1.jpg'} alt="" />
       </SwiperSlide>
-      <SwiperSlide><img src={'https://i.ibb.co/p2ZSMYB/slider3.jpg'} alt="" /></SwiperSlide>
-      <SwiperSlide><img src={'https://i.ibb.co/19HJ7Rb/rsz-1rsz-slider4.jpg'} alt="" /></SwiperSlide>
+      <SwiperSlide>
+        <img src={'https://i.ibb.co/p2ZSMYB/slider3.jpg'} alt="" />
+      </SwiperSlide>
     </Swiper>
         </div>
     );

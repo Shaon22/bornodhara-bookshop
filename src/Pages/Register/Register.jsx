@@ -1,12 +1,25 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../AuthProvider/AuthProvider";
 const Register = () => {
+    const{createUser}=useContext(MyContext)
+
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data =>{
+        const userName=data.name
+        const email=data.email
+        const password=data.password
+
+        createUser(email,password)
+        .then(res=>{
+            console.log(res)
+        })
+    }
     return (
         <div className="bg-[url('https://i.ibb.co/n14ssT2/register-2.jpg')] h-screen">
-            <div className="">
+            <div>
                 <h1 className='text-3xl font-bold text-center py-10 text-white'>Register Your Account</h1>
                 <div className="w-[30%] mx-auto bg-black p-10 bg-opacity-50 rounded">
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 ">

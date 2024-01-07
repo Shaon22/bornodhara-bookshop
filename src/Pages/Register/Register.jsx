@@ -58,7 +58,7 @@ const Register = () => {
                     </form>
                     <hr className="my-5" />
                     <button className="btn btn-sm w-full bg-cyan-400 border-none text-white">SIGN UP WITH<FcGoogle className="text-xl" /></button>
-                <h1 className="text-white m-5 text-center">Already Have an account? <Link className="text-blue-600 text-lg font-bold">Login</Link></h1>
+                <h1 className="text-white m-5 text-center">Already Have an account? <Link to={'/login'} className="text-blue-600 text-lg font-bold">Login</Link></h1>
                 </div>
                 
             </div>

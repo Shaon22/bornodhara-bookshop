@@ -3,7 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import { MyContext } from "../../AuthProvider/AuthProvider";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 const Navbar = () => {
-  const {user}=useContext(MyContext)
+  const {user,logOut}=useContext(MyContext)
+  const handleLogOut=()=>{
+    logOut()
+    .then(result=>{
+      console.log(result)
+    })
+  }
     const navlinks=
     <div className="text-lg font-semibold space-x-10">
         <>
@@ -44,7 +50,7 @@ const Navbar = () => {
     <>
     <h1 className=" mr-5">{user.displayName}</h1>
                             <img className="w-6 h-6 text-center rounded-full mr-4" src={user.photoURL} alt="" />
-    <Link to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >log Out <FiLogOut></FiLogOut></button></Link>
+    <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >log Out <FiLogOut></FiLogOut></button></Link>
     </>
     :
     <>

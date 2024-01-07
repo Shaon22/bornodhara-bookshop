@@ -1,6 +1,9 @@
-import { NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { MyContext } from "../../AuthProvider/AuthProvider";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
 const Navbar = () => {
+  const {user}=useContext(MyContext)
     const navlinks=
     <div className="text-lg font-semibold space-x-10">
         <>
@@ -36,18 +39,18 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  {/* {
+  {
     user?
     <>
     <h1 className=" mr-5">{user.displayName}</h1>
                             <img className="w-6 h-6 text-center rounded-full mr-4" src={user.photoURL} alt="" />
-    <Link to={'/'}><button onClick={handleLogOut} className="btn rounded btn-sm border-none bg-red-500 text-white" >log Out <FiLogOut></FiLogOut></button></Link>
+    <Link to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >log Out <FiLogOut></FiLogOut></button></Link>
     </>
     :
     <>
     <NavLink className={({ isActive }) => (isActive ? 'hidden' : '')} to={'/login'}><button className="btn rounded  btn-sm border-none bg-cyan-400 text-white ">login <FiLogIn></FiLogIn> </button></NavLink>
     </>
-  } */}
+  }
   
   </div>
 </div>

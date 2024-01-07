@@ -3,18 +3,25 @@ import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { MyContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
-    const{createUser}=useContext(MyContext)
+    const{createUser,updateUserProfile}=useContext(MyContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data =>{
-        const userName=data.name
+        const name=data.name
         const email=data.email
         const password=data.password
 
         createUser(email,password)
-        .then(res=>{
-            console.log(res)
+        .then(result=>{
+           
+            updateUserProfile(name)
+            console.log(result.user)
+           if(result.user){
+            toast('Registration succuessfull !!!')
+           }
         })
     }
     return (
@@ -55,6 +62,7 @@ const Register = () => {
                 </div>
                 
             </div>
+            <ToastContainer />
         </div>
     );
 };

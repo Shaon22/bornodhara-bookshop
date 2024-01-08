@@ -28,9 +28,9 @@ const Register = () => {
         <div className="bg-[url('https://i.ibb.co/n14ssT2/register-2.jpg')] h-screen">
             <div>
                 <h1 className='text-3xl font-bold text-center py-10 text-white'>Register Your Account</h1>
-                <div className="w-[30%] mx-auto bg-black p-10 bg-opacity-50 rounded">
+                <div className="w-[40%] mx-auto bg-black p-10 bg-opacity-50 rounded">
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 ">
-
+                        
                         <input {...register("name", { required: true })} className="w-full p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Name" type="text" />
                         {errors.name && <span className="text-red-500"> Name is required</span>}
 

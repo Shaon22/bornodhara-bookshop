@@ -20,7 +20,7 @@ const Navbar = () => {
       })
   }
   const navlinks =
-    <div className="text-lg font-semibold space-x-10">
+    <div className=" text-lg font-semibold space-x-10">
       <>
         <NavLink to={'/'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Home</NavLink>
         <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
@@ -31,7 +31,7 @@ const Navbar = () => {
       </>
     </div>
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar w-[1200px] mx-auto bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -81,14 +81,13 @@ const Navbar = () => {
                       <IoSettingsOutline />
                       <Link>Settings</Link>
                        </div>
+                       <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none mt-2 bg-red-500 text-white" >Log Out <FiLogOut></FiLogOut></button></Link>
                    
                   </div>
                 )}
               </div>
               {/* dropdown */}
               
-
-              <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >Log Out <FiLogOut></FiLogOut></button></Link>
             </>
             :
             <>

@@ -2,6 +2,10 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MyContext } from "../../AuthProvider/AuthProvider";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { TbCameraUp } from "react-icons/tb";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {
@@ -19,10 +23,10 @@ const Navbar = () => {
     <div className="text-lg font-semibold space-x-10">
       <>
         <NavLink to={'/'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Home</NavLink>
-        <NavLink to={'/addBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Add books</NavLink>
         <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
-        <NavLink to={'/borrowedBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Borrowed books</NavLink>
-
+        <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Packages</NavLink>
+        <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>About</NavLink>
+       
 
       </>
     </div>
@@ -54,21 +58,37 @@ const Navbar = () => {
           user ?
             <>
             {/* dropdown */}
+             <h1 className="mr-5 uppercase font-bold text-lg">{user.displayName}</h1>
               <div className="relative mr-5">
-                <img className="cursor-pointer h-6 w-6 rounded-full"onClick={toggleDropdown} src={user.photoURL} />
+               
+                <img className="cursor-pointer h-6 w-6 rounded-full "onClick={toggleDropdown} src={user.photoURL} />
                 {isDropdownVisible && (
-                  <div className="absolute z-10 bg-stone-200 rounded shadow-xl w-52 p-5 h-60 mt-2 -right-28">
-                    <ul>
-                      
-                      {/* Add more menu items as needed */}
-                    </ul>
+                  <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-52 p-5 mt-2 right-0 bg-opacity-90">
+                    <div className="flex justify-center relative">
+                      <img className="h-20 w-20 rounded-full" src={user.photoURL} alt="" />
+                      <TbCameraUp className="text-2xl absolute bottom-0 right-7 "/>
+                    </div>
+                    <div>
+                      <h1 className="text-center mt-2 text-lg font-bold text-white uppercase">{user.displayName}</h1>
+                    </div>
+                    <hr className="my-5" />
+                    
+                      <div className="text-lg font-semibold text-white flex items-center gap-2">
+                        <MdOutlineDashboardCustomize/>
+                      <Link>Dashboard</Link>
+                       </div>
+                      <div className="text-lg font-semibold text-white flex items-center gap-2">
+                      <IoSettingsOutline />
+                      <Link>Settings</Link>
+                       </div>
+                   
                   </div>
                 )}
               </div>
               {/* dropdown */}
               
 
-              <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >log Out <FiLogOut></FiLogOut></button></Link>
+              <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none bg-red-500 text-white" >Log Out <FiLogOut></FiLogOut></button></Link>
             </>
             :
             <>

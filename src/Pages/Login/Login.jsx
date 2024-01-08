@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { FcGoogle } from 'react-icons/fc';
+import { FcGoogle, FcHome } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MyContext } from '../../AuthProvider/AuthProvider';
 const Login = () => {
-    const {signIn}=useContext(MyContext)
+    const {signIn,googleLogin}=useContext(MyContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data =>{
         const email=data.email
@@ -17,8 +17,15 @@ const Login = () => {
 
         })
     }
+    const handleGoogle=()=>{
+        googleLogin()
+        .then(result=>{
+            console.log(result)
+        })
+    }
     return (
         <div className="bg-[url('https://i.ibb.co/723JZsf/login-1.jpg')] h-screen">
+             <Link to={'/'} className="p-5 flex items-end gap-2"><button><FcHome className="text-4xl block"/></button></Link>
              <div>
                 <h1 className='text-3xl font-bold text-center py-10 text-white'>Register Your Account</h1>
                 <div className="w-[30%] mx-auto bg-black p-10 bg-opacity-50 rounded">
@@ -47,7 +54,7 @@ const Login = () => {
                         </div>
                     </form>
                     <hr className="my-5" />
-                    <button className="btn btn-sm w-full bg-cyan-400 border-none text-white">SIGN IN WITH<FcGoogle className="text-xl" /></button>
+                    <button onClick={handleGoogle} className="btn btn-sm w-full bg-cyan-400 border-none text-white">SIGN IN WITH<FcGoogle className="text-xl" /></button>
                 <h1 className="text-white m-5 text-center">Dont Have any account? <Link to={'/register'} className="text-blue-600 text-lg font-bold">Register</Link></h1>
                 </div>
                 

@@ -5,7 +5,6 @@ import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { TbCameraUp } from "react-icons/tb";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
-import { CiSearch } from "react-icons/ci";
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {
@@ -66,7 +65,12 @@ const Navbar = () => {
                   <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-52 p-5 mt-2 right-0 bg-opacity-90">
                     <div className="flex justify-center relative">
                       <img className="h-20 w-20 rounded-full" src={user.photoURL} alt="" />
-                      <TbCameraUp className="text-2xl absolute bottom-0 right-7 "/>
+                      <label htmlFor="add">
+                        <TbCameraUp 
+                         className="text-2xl absolute bottom-0 right-7"/>
+                      </label>
+                      <input className="hidden" type="file" name="" id="add" />
+                      
                     </div>
                     <div>
                       <h1 className="text-center mt-2 text-lg font-bold text-white uppercase">{user.displayName}</h1>

@@ -56,7 +56,6 @@ const Register = () => {
 
                             })} />
                         {errors.password && <span className="text-red-500">{errors.password.message}</span>}
-
                         <div className="text-center">
                             <input className="btn btn-sm w-full bg-cyan-400 border-none text-white" type="submit" value="REGISTER" />
                         </div>

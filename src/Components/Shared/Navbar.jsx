@@ -23,8 +23,7 @@ const Navbar = () => {
       <>
         <NavLink to={'/'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Home</NavLink>
         <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
-        
-        <NavLink to={'/about'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>About</NavLink>
+        <NavLink to={'/contact'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Contact</NavLink>
        
 
       </>

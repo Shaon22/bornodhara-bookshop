@@ -7,6 +7,7 @@ import AllBooks from "../Pages/AllBooks/AllBooks";
 import Contact from "../Pages/Contact/Contact";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Borrowed from "../Dashboard/UserDashboard/Borrowed";
+import Bought from "../Dashboard/UserDashboard/Bought";
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/borrowed',
                 element:<Borrowed></Borrowed>
+            },
+            {
+                path:'/dashboard/bought',
+                element:<Bought></Bought>
             }
         ]
     }

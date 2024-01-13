@@ -2,7 +2,7 @@
 const Borrowed = () => {
     return (
         <div>
-           borrowed 
+           borrowed
         </div>
     );
 };

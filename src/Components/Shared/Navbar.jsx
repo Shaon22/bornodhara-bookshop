@@ -78,7 +78,7 @@ const Navbar = () => {
                     
                       <div className="text-lg font-semibold text-white flex items-center gap-2">
                         <MdOutlineDashboardCustomize/>
-                      <Link>Dashboard</Link>
+                      <Link to={'/dashboard'}>Dashboard</Link>
                        </div>
                       <div className="text-lg font-semibold text-white flex items-center gap-2">
                       <IoSettingsOutline />

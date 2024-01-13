@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import Contact from "../Pages/Contact/Contact";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import Borrowed from "../Dashboard/UserDashboard/Borrowed";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ export const router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element:<DashboardLayout></DashboardLayout>
+        element:<DashboardLayout></DashboardLayout>,
+        children:[
+            {
+                path:'/dashboard/borrowed',
+                element:<Borrowed></Borrowed>
+            }
+        ]
     }
 ])

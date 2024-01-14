@@ -9,6 +9,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import Borrowed from "../Dashboard/UserDashboard/Borrowed";
 import Bought from "../Dashboard/UserDashboard/Bought";
 import UserHome from "../Dashboard/UserDashboard/UserHome";
+import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'allBooks',
-                element: <AllBooks></AllBooks>,
+                element:<ProtectedRoute> <AllBooks></AllBooks></ProtectedRoute>,
                 loader: () => fetch`http://localhost:5000/allBooks`
 
             },
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <ProtectedRoute><DashboardLayout></DashboardLayout>,</ProtectedRoute>,
         children: [
             {
 

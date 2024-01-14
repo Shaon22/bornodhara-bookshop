@@ -21,9 +21,9 @@ const Navbar = () => {
   const navlinks =
     <div className=" text-lg font-semibold space-x-10">
       <>
-        <NavLink to={'/'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Home</NavLink>
-        <NavLink to={'/allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
-        <NavLink to={'/contact'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Contact</NavLink>
+        <NavLink to={'/'} className={({isActive }) => (isActive ? 'text-cyan-400':'text-black')}>Home</NavLink>
+        <NavLink to={'allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
+        <NavLink to={'contact'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Contact</NavLink>
        
 
       </>
@@ -78,7 +78,7 @@ const Navbar = () => {
                     
                       <div className="text-lg font-semibold text-white flex items-center gap-2">
                         <MdOutlineDashboardCustomize/>
-                      <Link to={'/dashboard'}>Dashboard</Link>
+                      <Link to={'dashboard/userHome'}>Dashboard</Link>
                        </div>
                       <div className="text-lg font-semibold text-white flex items-center gap-2">
                       <IoSettingsOutline />

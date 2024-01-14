@@ -8,6 +8,7 @@ import Contact from "../Pages/Contact/Contact";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Borrowed from "../Dashboard/UserDashboard/Borrowed";
 import Bought from "../Dashboard/UserDashboard/Bought";
+import UserHome from "../Dashboard/UserDashboard/UserHome";
 
 export const router = createBrowserRouter([
     {
@@ -19,14 +20,14 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:'/allBooks',
-                element:<AllBooks></AllBooks>,
-                loader:()=>fetch`http://localhost:5000/allBooks`
-                
+                path: 'allBooks',
+                element: <AllBooks></AllBooks>,
+                loader: () => fetch`http://localhost:5000/allBooks`
+
             },
             {
-                path:'/contact',
-                element:<Contact></Contact>
+                path: 'contact',
+                element: <Contact></Contact>
             }
         ]
     },
@@ -35,21 +36,28 @@ export const router = createBrowserRouter([
         element: <Register></Register>
     },
     {
-        path:'login',
-        element:<Login></Login>
+        path: 'login',
+        element: <Login></Login>
     },
     {
-        path:'/dashboard',
-        element:<DashboardLayout></DashboardLayout>,
-        children:[
+        path: 'dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
             {
-                path:'/dashboard/borrowed',
-                element:<Borrowed></Borrowed>
+
+                path: 'userHome',
+                element: <UserHome></UserHome>
+        
             },
             {
-                path:'/dashboard/bought',
-                element:<Bought></Bought>
+                path: 'borrowed',
+                element: <Borrowed></Borrowed>
+            },
+            {
+                path: 'bought',
+                element: <Bought></Bought>
             }
         ]
-    }
+    },
+    
 ])

@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle, FcHome } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MyContext } from '../../AuthProvider/AuthProvider';
 const Login = () => {
     const {signIn,googleLogin}=useContext(MyContext)
+    const location = useLocation()
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data =>{
         const email=data.email
@@ -14,6 +16,7 @@ const Login = () => {
         signIn(email,password)
         .then(result=>{
             console.log(result)
+            navigate(location?.state ? location.state : '/')
 
         })
     }
@@ -21,14 +24,15 @@ const Login = () => {
         googleLogin()
         .then(result=>{
             console.log(result)
+            navigate(location?.state ? location.state : '/')
         })
     }
     return (
-        <div className="bg-[url('https://i.ibb.co/723JZsf/login-1.jpg')] h-screen">
+        <div className="bg-[url('https://i.ibb.co/723JZsf/login-1.jpg')]">
              <Link to={'/'} className="p-5 flex items-end gap-2"><button><FcHome className="text-4xl block"/></button></Link>
              <div>
                 <h1 className='text-3xl font-bold text-center py-10 text-white'>Register Your Account</h1>
-                <div className="w-[30%] mx-auto bg-black p-10 bg-opacity-50 rounded">
+                <div className=" mx-auto bg-black p-10 bg-opacity-50 rounded">
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 ">
 
                         <input {...register("email", { required: true })} className="w-full p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Email" type="email" />

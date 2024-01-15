@@ -29,7 +29,7 @@ const Navbar = () => {
       </>
     </div>
   return (
-    <div className="navbar w-[1200px] mx-auto bg-base-100">
+    <div className="navbar mx-auto bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,8 +41,9 @@ const Navbar = () => {
             }
           </ul>
         </div>
-        <img className="w-[20%]" src="" alt="" />
-        <a className="btn btn-ghost normal-case text-xl font-extrabold">THE <span className="text-orange-600">ATHENEUM</span></a>
+       
+       <a className="btn text-center btn-ghost normal-case text-base font-extrabold">THE <span className="text-orange-600">ATHENEUM</span></a>
+       
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -56,31 +57,31 @@ const Navbar = () => {
           user ?
             <>
             {/* dropdown */}
-             <h1 className="mr-5 uppercase font-bold text-lg">{user.displayName}</h1>
+             <h1 className=" hidden sm:block mr-5 uppercase font-bold">{user.displayName}</h1>
               <div className="relative mr-5">
                
                 <img className="cursor-pointer h-6 w-6 rounded-full "onClick={toggleDropdown} src={user.photoURL} />
                 {isDropdownVisible && (
-                  <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-52 p-5 mt-2 right-0 bg-opacity-90">
+                  <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-40  p-5 mt-2 right-0 bg-opacity-90">
                     <div className="flex justify-center relative">
                       <img className="h-20 w-20 rounded-full" src={user.photoURL} alt="" />
                       <label htmlFor="add">
                         <TbCameraUp 
-                         className="text-2xl absolute bottom-0 right-7"/>
+                         className="text-2xl absolute bottom-0 right-0"/>
                       </label>
                       <input className="hidden" type="file" name="" id="add" />
                       
                     </div>
-                    <div>
+                    <div className="">
                       <h1 className="text-center mt-2 text-lg font-bold text-white uppercase">{user.displayName}</h1>
                     </div>
                     <hr className="my-5" />
                     
-                      <div className="text-lg font-semibold text-white flex items-center gap-2">
+                      <div className="text-base font-semibold text-white flex items-center gap-2">
                         <MdOutlineDashboardCustomize/>
                       <Link to={'dashboard/userHome'}>Dashboard</Link>
                        </div>
-                      <div className="text-lg font-semibold text-white flex items-center gap-2">
+                      <div className="text-base font-semibold text-white flex items-center gap-2">
                       <IoSettingsOutline />
                       <Link>Settings</Link>
                        </div>
@@ -94,7 +95,7 @@ const Navbar = () => {
             </>
             :
             <>
-              <NavLink className={({ isActive }) => (isActive ? 'hidden' : '')} to={'/login'}><button className="btn rounded  btn-sm border-none bg-cyan-400 text-white ">login <FiLogIn></FiLogIn> </button></NavLink>
+              <NavLink className={({ isActive }) => (isActive ? 'hidden' : '')} to={'/login'}><button className="btn rounded mr-3 btn-sm border-none bg-cyan-400 text-white ">login <FiLogIn></FiLogIn> </button></NavLink>
             </>
         }
 

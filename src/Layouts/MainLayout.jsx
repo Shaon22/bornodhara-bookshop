@@ -6,7 +6,7 @@ const MainLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-           <div className="w-[1200px] mx-auto">
+           <div className="sm:w-[1200px] mx-auto">
            <Outlet></Outlet>
            </div>
            <Footer></Footer>

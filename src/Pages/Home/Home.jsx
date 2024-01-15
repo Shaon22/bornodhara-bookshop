@@ -3,7 +3,7 @@ import Banner from "./Banner";
 
 const Home = () => {
     return (
-        <div className="bg">
+        <div>
            <Banner></Banner>
            <About></About>
         </div>

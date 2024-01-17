@@ -19,7 +19,7 @@ const Navbar = () => {
       })
   }
   const navlinks =
-    <div className=" text-lg font-semibold space-x-10">
+    <div className=" text-lg font-semibold space-x-10 sm:">
       <>
         <NavLink to={'/'} className={({isActive }) => (isActive ? 'text-cyan-400':'text-black')}>Home</NavLink>
         <NavLink to={'allBooks'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>All books</NavLink>
@@ -42,7 +42,7 @@ const Navbar = () => {
           </ul>
         </div>
        
-       <a className="btn text-center btn-ghost normal-case text-base font-extrabold">THE <span className="text-orange-600">ATHENEUM</span></a>
+       <a className="btn btn-ghost normal-case text-base font-extrabold sm:text-2xl sm:ml-12">THE <span className="text-orange-600">ATHENEUM</span></a>
        
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -58,11 +58,11 @@ const Navbar = () => {
             <>
             {/* dropdown */}
              <h1 className=" hidden sm:block mr-5 uppercase font-bold">{user.displayName}</h1>
-              <div className="relative mr-5">
+              <div className="relative mr-2 sm:mr-16">
                
-                <img className="cursor-pointer h-6 w-6 rounded-full "onClick={toggleDropdown} src={user.photoURL} />
+                <img className="cursor-pointer h-6 w-6 sm:h-8 sm:w-8 rounded-full "onClick={toggleDropdown} src={user.photoURL} />
                 {isDropdownVisible && (
-                  <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-40  p-5 mt-2 right-0 bg-opacity-90">
+                  <div className="absolute z-10 bg-cyan-400 rounded shadow-4xl w-44  p-5 mt-2 right-0 bg-opacity-90 sm:w-52">
                     <div className="flex justify-center relative">
                       <img className="h-20 w-20 rounded-full" src={user.photoURL} alt="" />
                       <label htmlFor="add">

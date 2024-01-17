@@ -6,7 +6,7 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 const Banner = () => {
     return (
-        <div className='px-3'>
+        <div className='px-3 sm:px-0'>
             <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={50}

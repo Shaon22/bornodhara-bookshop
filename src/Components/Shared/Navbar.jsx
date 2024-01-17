@@ -5,13 +5,22 @@ import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { TbCameraUp } from "react-icons/tb";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
+import { FaBarsStaggered } from "react-icons/fa6";
 const Navbar = () => {
+  const { user, logOut } = useContext(MyContext)
+  
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
   };
-  const { user, logOut } = useContext(MyContext)
+  
+  
+  const [isMenuVisible, setMenuVisible] = useState(false);
+  
+  const toggleMenu = () => {
+    setMenuVisible(!isMenuVisible);
 
+  };
   const handleLogOut = () => {
     logOut()
       .then(result => {
@@ -31,16 +40,24 @@ const Navbar = () => {
   return (
     <div className="navbar mx-auto bg-base-100">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </label>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            {
-              navlinks
-            }
-          </ul>
-        </div>
+       <div>
+       <FaBarsStaggered className="relative block ml-2 sm:hidden" onClick={toggleMenu} />
+       {
+        isMenuVisible&&(
+         <div className="bg-cyan-500 rounded z-10 w-32 p-3 absolute list-none space-y-3 ">
+          <li>
+          <NavLink to={'/'} className={({isActive }) => (isActive ? 'text-white font-semibold':'text-black font-semibold')}>Home</NavLink>
+          </li>
+          <li>
+          <NavLink to={'allBooks'} className={({ isActive }) => (isActive ? 'text-white font-semibold' : 'text-black font-semibold')}>All books</NavLink>
+          </li>
+          <li>
+          <NavLink to={'Contact'} className={({ isActive }) => (isActive ? 'text-white font-semibold' : 'text-black font-semibold')}>Contact</NavLink>
+          </li>
+         </div> 
+        )
+       }
+       </div>
        
        <a className="btn btn-ghost normal-case text-base font-extrabold sm:text-2xl sm:ml-12">THE <span className="text-orange-600">ATHENEUM</span></a>
        

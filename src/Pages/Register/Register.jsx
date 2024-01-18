@@ -43,10 +43,10 @@ const Register = () => {
     }
     return (
         <div className="bg-[url('https://i.ibb.co/n14ssT2/register-2.jpg')] h-screen">
-            <Link to={'/'}><button className='p-5'><FcHome className="text-2xl" /></button></Link>
+            <Link to={'/'}><button className='p-5'><FcHome className="text-2xl sm:text-4xl" /></button></Link>
             <div className="px-5">
-                <h1 className='text-lg mb-10 font-bold text-center text-white'>Register Your Account</h1>
-                <div className=" mx-auto bg-black p-5 bg-opacity-50 rounded">
+                <h1 className='text-lg sm:text-2xl mb-10 font-bold text-center text-white'>Register Your Account</h1>
+                <div className="sm:w-[30%] mx-auto bg-black p-5 bg-opacity-50 rounded">
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 ">
 
                         <input {...register("name", { required: true })} className="w-full p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Name" type="text" />

@@ -10,6 +10,7 @@ import Borrowed from "../Dashboard/UserDashboard/Borrowed";
 import Bought from "../Dashboard/UserDashboard/Bought";
 import UserHome from "../Dashboard/UserDashboard/UserHome";
 import ProtectedRoute from "./ProtectedRoute";
+import BooksDetails from "../Pages/AllBooks/BooksDetails";
 
 export const router = createBrowserRouter([
     {
@@ -22,16 +23,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'allBooks',
-                element:<ProtectedRoute> <AllBooks></AllBooks></ProtectedRoute>,
+                element: <ProtectedRoute> <AllBooks></AllBooks></ProtectedRoute>,
                 loader: () => fetch`http://localhost:5000/allBooks`
 
             },
             {
                 path: 'contact',
                 element: <Contact></Contact>
-            }
+            },
+            {
+        path: 'details/:_id',
+        element: <BooksDetails></BooksDetails>
+    },
+
         ]
     },
+    
     {
         path: 'register',
         element: <Register></Register>
@@ -48,7 +55,7 @@ export const router = createBrowserRouter([
 
                 path: 'userHome',
                 element: <UserHome></UserHome>
-        
+
             },
             {
                 path: 'borrowed',
@@ -60,5 +67,5 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    
+
 ])

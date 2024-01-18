@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const DashboardLayout = () => {
     return (
         <div className="flex">
-            <div className="w-[20%] h-screen bg-cyan-400 list-none p-5 text-lg font-semibold space-y-3">
+            <div className="w-[35%] sm:w-[15%] h-screen bg-cyan-400 list-none p-2 sm:p-5 text-sm sm:text-lg font-semibold space-y-3">
             <li>
                 <NavLink to={'userHome'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Home</NavLink>
             </li>

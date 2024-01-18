@@ -29,16 +29,16 @@ const Login = () => {
     }
     return (
         <div className="bg-[url('https://i.ibb.co/723JZsf/login-1.jpg')] h-screen">
-             <Link to={'/'}><button className='p-5'><FcHome className="text-2xl"/></button></Link>
+             <Link to={'/'}><button className='p-5'><FcHome className="text-2xl sm:text-4xl"/></button></Link>
              <div className='px-5'>
-                <h1 className='text-lg mb-10 font-bold text-center text-white'>Login Now</h1>
-                <div className=" mx-auto bg-black p-5 bg-opacity-50 rounded">
+                <h1 className='text-lg sm:text-2xl mb-10 font-bold text-center text-white'>Login Now</h1>
+                <div className=" mx-auto sm:w-[25%] bg-black p-5 bg-opacity-50 rounded">
                     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto space-y-5 ">
 
                         <input {...register("email", { required: true })} className="w-full p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Email" type="email" />
                         {errors.email && <span className="text-red-500">Email is required</span>}
 
-                        <input className="w-full p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Password" type="password" {...register("password",
+                        <input className="w-full  p-2 font-semibold outline-none rounded hover:border-b-cyan-400 border-2" placeholder="Password" type="password" {...register("password",
                             {
                                 required: "field is required",
                                 minLength: {

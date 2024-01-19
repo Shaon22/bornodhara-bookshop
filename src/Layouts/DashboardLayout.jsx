@@ -8,7 +8,7 @@ const DashboardLayout = () => {
                 <NavLink to={'userHome'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Home</NavLink>
             </li>
             <li>
-                <NavLink to={'borrowed'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Borrowed Books</NavLink>
+                <NavLink to={'savedBooks'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Saved Books </NavLink>
             </li>
             <li>
                 <NavLink to={'bought'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Bought Books</NavLink>
@@ -16,8 +16,7 @@ const DashboardLayout = () => {
             <li>
                 <NavLink to={'orders'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Orders</NavLink>
             </li>
-
-        </div>
+            </div>
        <div className="flex-1">
        <Outlet></Outlet>
        </div>

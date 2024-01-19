@@ -103,7 +103,7 @@ const Navbar = () => {
                       <Link>Settings</Link>
                        </div>
                        <Link onClick={handleLogOut} to={'/'}><button className="btn rounded btn-sm border-none mt-2 bg-red-500 text-white" >Log Out <FiLogOut></FiLogOut></button></Link>
-                   
+                  
                   </div>
                 )}
               </div>

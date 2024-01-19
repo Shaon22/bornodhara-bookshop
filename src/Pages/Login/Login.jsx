@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle, FcHome } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MyContext } from '../../AuthProvider/AuthProvider';
 const Login = () => {

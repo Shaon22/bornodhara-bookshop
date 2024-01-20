@@ -12,7 +12,7 @@ const AllBooks = () => {
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold mt-5">{allBook.name}</h1>
-                            <h1 className=" font-medium mt-1">Author: {allBook.author}</h1>
+                            <h1 className="font-medium mt-1">Author: {allBook.author}</h1>
                             <h1 className=" font-medium mt-1">Category: {allBook.category}</h1>
                             <h1 className=" font-medium mt-1">Ratings :{allBook.ratings}</h1>
 

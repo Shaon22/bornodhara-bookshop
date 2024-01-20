@@ -6,7 +6,6 @@ import Login from "../Pages/Login/Login";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import Contact from "../Pages/Contact/Contact";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import Borrowed from "../Dashboard/UserDashboard/SavedBooks";
 import Bought from "../Dashboard/UserDashboard/Bought";
 import UserHome from "../Dashboard/UserDashboard/UserHome";
 import ProtectedRoute from "./ProtectedRoute";
@@ -36,7 +35,7 @@ export const router = createBrowserRouter([
                 path: 'details/:_id',
                 element: <BooksDetails></BooksDetails>,
                 loader:({params})=> fetch(`http://localhost:5000/allbooks/${params._id}`)
-            },
+            }
 
         ]
     },
@@ -51,7 +50,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <ProtectedRoute><DashboardLayout></DashboardLayout>,</ProtectedRoute>,
+        element: <ProtectedRoute><DashboardLayout></DashboardLayout></ProtectedRoute>,
         children: [
             {
 
@@ -62,12 +61,13 @@ export const router = createBrowserRouter([
             {
                 path: 'savedBooks',
                 element:<SavedBooks></SavedBooks>
+
             },
             {
                 path: 'bought',
                 element: <Bought></Bought>
             }
         ]
-    },
+    }
 
 ])

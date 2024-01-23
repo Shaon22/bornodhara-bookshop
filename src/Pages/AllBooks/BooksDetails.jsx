@@ -8,12 +8,11 @@ const BooksDetails = () => {
     const { user } = useContext(MyContext)
     const axiosPublic = useAxiosPublic()
     const booksInfo = useLoaderData()
-    const { _id, imageURL, name, author, category,shortDescription } = booksInfo
+    const {imageURL, name, author, category,shortDescription } = booksInfo
     console.log(booksInfo)
     const handleReadLater = () => {
         const bookInfo = {
-            id: _id,
-            email: user.email
+           imageURL,name,author,email:user.email
         }
         console.log(bookInfo)
         axiosPublic.post('/readLater', bookInfo)

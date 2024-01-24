@@ -10,12 +10,12 @@ const BooksDetails = () => {
     const booksInfo = useLoaderData()
     const {imageURL, name, author, category,shortDescription } = booksInfo
     console.log(booksInfo)
-    const handleReadLater = () => {
+    const handleAddToCart= () => {
         const bookInfo = {
            imageURL,name,author,email:user.email
         }
         console.log(bookInfo)
-        axiosPublic.post('/readLater', bookInfo)
+        axiosPublic.post('/addToCart', bookInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     toast('Added for read later succcessfully')
@@ -33,9 +33,8 @@ const BooksDetails = () => {
                     <h1 className="text-lg font-medium my-1">Author: {author}</h1>
                     <h1 className="text-lg font-medium my-1">Category: {category}</h1>
                     <p className="font-medium my-5">{shortDescription}</p>
-                    <button onClick={handleReadLater} className="items-center btn btn-sm bg-cyan-400 text-white">Read Later</button>
-                    <button className=" items-center btn btn-sm bg-cyan-400 text-white mx-2">Read Now</button>
-                    <button className=" items-center btn btn-sm bg-cyan-400 text-white">Buy Now</button>
+                    <button onClick={ handleAddToCart} className="btn btn-sm bg-cyan-400 text-white">Add To Cart</button>
+                    <button className="btn btn-sm bg-cyan-400 text-white mx-2">Read Now</button>
                 </div>
 
             </div>

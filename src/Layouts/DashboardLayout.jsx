@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { MyContext } from "../AuthProvider/AuthProvider";
 
 const DashboardLayout = () => {
-    const {user}=useContext(MyContext)
+
     return (
         <div className="flex">
-            <div className="w-[35%] sm:w-[15%] h-screen bg-cyan-400 list-none p-2 sm:p-5 text-sm sm:text-lg font-semibold space-y-3">
+            <div className="w-[35%] sm:w-[15%] h-screen bg-cyan-400 list-none p-2 sm:p-5 text-sm sm:text-lg font-semibold space-y-3 fixed">
                 <li>
                     <NavLink to={'userHome'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Home</NavLink>
                 </li>
@@ -19,10 +19,14 @@ const DashboardLayout = () => {
                 <li>
                     <NavLink to={'orders'} className={({ isActive }) => (isActive ? 'text-cyan-400' : 'text-black')}>Orders</NavLink>
                 </li>
+                <hr />
+                <Link to={'/'}>home</Link>
             </div>
-            <div className="flex-1">
+
+            <div className="flex-1 ml-[35%] sm:ml-[15%]">
                 <Outlet></Outlet>
             </div>
+
         </div>
     );
 };

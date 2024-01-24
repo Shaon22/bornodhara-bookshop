@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { MyContext } from "../AuthProvider/AuthProvider";
 
 const DashboardLayout = () => {
 

@@ -12,7 +12,7 @@ const BooksDetails = () => {
     console.log(booksInfo)
     const handleAddToCart= () => {
         const bookInfo = {
-           imageURL,name,author,email:user.email
+           imageURL,name,author,email:user.email,quantity:'1'
         }
         console.log(bookInfo)
         axiosPublic.post('/addToCart', bookInfo)

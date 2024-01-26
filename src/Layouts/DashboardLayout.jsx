@@ -21,7 +21,7 @@ const DashboardLayout = () => {
                 <Link to={'/'}>home</Link>
             </div>
 
-            <div className="flex-1 ml-[35%] sm:ml-[15%]">
+            <div className="flex-1 ml-[35%] sm:ml-[15%] bg-slate-100">
                 <Outlet></Outlet>
             </div>
 

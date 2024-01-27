@@ -5,7 +5,7 @@ const AllBooks = () => {
     return (
         <div className="p-5 sm:p-0 grid grid-cols-1 sm:grid-cols-4 gap-5">
             {
-                allBooks.map(allBook =>
+                allBooks?.map(allBook =>
                     <div className="p-5 relative sm:p-3 shadow-2xl rounded text-center sm:text-left  " key={allBook._id}>
                         <div>
                             <img className="h-[350px] mx-auto sm:mx-0" src={allBook.imageURL} alt="" />

@@ -1,26 +1,44 @@
 
-import Button from "../../Components/Shared/Button";
-import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import { BsCashStack } from "react-icons/bs";
 import { GiReturnArrow } from "react-icons/gi";
 import { TbReplace } from "react-icons/tb";
 import { FaCoins } from "react-icons/fa";
 import { AiFillCheckCircle } from "react-icons/ai";
-import CartItemsInfo from "./SavedBooks/CartItemsInfo";
 import useAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { Link } from "react-router-dom";
+import { RiDeleteBin3Line } from "react-icons/ri";
+import Swal from "sweetalert2";
+import UseCartItemsInfo from "../../Hooks/UsecartItemsInfo/UseCartItemsInfo";
 const SavedBooks = () => {
-  const axiosPublic = useAxiosPublic()
-  const [booksInfo, refetch] = CartItemsInfo()
+  const axiosPublic=useAxiosPublic()
+  const [booksInfo, refetch] = UseCartItemsInfo()
   console.log(booksInfo)
   
-
-  const handleIncreaseUpdate = (event) => {
-event.preventDefault()
-const form=event.target
-const quantity=form.quantity.value
-console.log(quantity)
-   
-  }
+  const handleDelete = (id) => {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            axiosPublic.delete(`/deleteCart/${id}`)
+                .then(res => {
+                    if (res.data.deletedCount > 0) {
+                        refetch()
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Deletd successfuly from cart",
+                            icon: "success"
+                        });
+                    }
+                })
+        }
+    });
+}
 
   return (
     <div className="p-5 flex gap-5">
@@ -35,15 +53,17 @@ console.log(quantity)
                 <h1 className="text-2xl font-bold">{bookInfo.name}</h1>
 
                 <h1 className="font-semibold">{bookInfo.author}</h1>
-                <Button>Delete</Button>
+               <RiDeleteBin3Line onClick={()=>handleDelete(bookInfo._id)} className="text-2xl text-red-600" />
+                
+
               </div>
-              <form>
+              {/* <form>
                 <div className="flex items-center gap-3 text-2xl p-5 ">
                   <button className="" ><CiSquareMinus className="text-4xl" /></button>
                   <input className="w-[10%]" type="text" name="quantity" id="" defaultValue={bookInfo.quantity} />
                   <button className="flex items-center" onSubmit={handleIncreaseUpdate} ><CiSquarePlus className="text-4xl" /></button>
                 </div>
-              </form>
+              </form> */}
             </div>
 
 
@@ -60,9 +80,11 @@ console.log(quantity)
             <li className="flex items-center gap-1"><AiFillCheckCircle />100% Original Product</li>
           </ul>
         </div>
-        <div className="fixed right-5 top-60 border-4">
-        </div>
+        
       </div>
+      <div className="fixed right-9 bottom-60">
+      <Link><button className="btn sm:btn-wide bg-cyan-400 text-white border-none">Place Order</button></Link>
+        </div>
     </div>
   );
 };

@@ -6,11 +6,11 @@ import Login from "../Pages/Login/Login";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import Contact from "../Pages/Contact/Contact";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import Bought from "../Dashboard/UserDashboard/Bought";
 import UserHome from "../Dashboard/UserDashboard/UserHome";
 import ProtectedRoute from "./ProtectedRoute";
 import BooksDetails from "../Pages/AllBooks/BooksDetails";
 import SavedBooks from "../Dashboard/UserDashboard/SavedBooks";
+import Orders from "../Dashboard/UserDashboard/Orders";
 
 export const router = createBrowserRouter([
     {
@@ -63,10 +63,10 @@ export const router = createBrowserRouter([
                 element:<SavedBooks></SavedBooks>
 
             },
-            {
-                path: 'bought',
-                element: <Bought></Bought>
-            }
+           {
+            path:'orders',
+            element:<Orders></Orders>
+           }
         ]
     }
 

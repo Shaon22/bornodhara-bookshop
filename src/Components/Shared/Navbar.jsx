@@ -83,7 +83,7 @@ console.log(booksInfo)
                
                 <Link to={'dashboard/savedBooks'}><button className="rounded-full p-2 bg-gray-100 "><BsCartCheck className="text-2xl" /></button></Link>
                 <span className="absolute -top-2 -right-4 w-6 h-6 rounded-full flex justify-center items-center font-bold bg-cyan-400 text-white text-xs">{
-      booksInfo.length
+      booksInfo?.length
     }</span>
               </div>
               <h1 className=" hidden sm:block mr-5 uppercase font-bold">{user.displayName}</h1>

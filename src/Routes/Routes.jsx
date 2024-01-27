@@ -11,6 +11,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import BooksDetails from "../Pages/AllBooks/BooksDetails";
 import SavedBooks from "../Dashboard/UserDashboard/SavedBooks";
 import Orders from "../Dashboard/UserDashboard/Orders";
+import Books from "../Dashboard/AdminDashboard/Books";
 
 export const router = createBrowserRouter([
     {
@@ -66,6 +67,11 @@ export const router = createBrowserRouter([
            {
             path:'orders',
             element:<Orders></Orders>
+           },
+           {
+            path:'books',
+            element:<Books></Books>,
+            loader: () => fetch`http://localhost:5000/allBooks`
            }
         ]
     }

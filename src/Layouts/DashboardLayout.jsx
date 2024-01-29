@@ -17,10 +17,10 @@ const DashboardLayout = () => {
                                     <NavLink to={'books'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>All Books</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={'books'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Users</NavLink>
+                                    <NavLink to={'book'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Users</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={'books'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Pending Orders</NavLink>
+                                    <NavLink to={'boo'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Pending Orders</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={'/'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Pending Orders</NavLink>

@@ -12,6 +12,7 @@ import BooksDetails from "../Pages/AllBooks/BooksDetails";
 import SavedBooks from "../Dashboard/UserDashboard/SavedBooks";
 import Orders from "../Dashboard/UserDashboard/Orders";
 import Books from "../Dashboard/AdminDashboard/Books";
+import AdminHome from "../Dashboard/AdminDashboard/AdminHome";
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
                 path: 'userHome',
                 element: <UserHome></UserHome>
 
+            },
+            {
+                path:'adminHome',
+                element:<AdminHome></AdminHome>
             },
             {
                 path: 'savedBooks',

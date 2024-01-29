@@ -8,11 +8,14 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { BsCartCheck } from "react-icons/bs";
 import UseCartItemsInfo from "../../Hooks/UsecartItemsInfo/UseCartItemsInfo";
+import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 
 const Navbar = () => {
+  const [isAdmin] = UseAdmin()
   const { user, logOut } = useContext(MyContext)
-const [booksInfo] = UseCartItemsInfo()
-console.log(booksInfo)
+  const [booksInfo, refetch] = UseCartItemsInfo()
+  console.log(booksInfo)
+  refetch()
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -43,7 +46,7 @@ console.log(booksInfo)
     </div>
   return (
     <div className="navbar mx-auto bg-base-100">
-    
+
       <div className="navbar-start">
         <div>
           <FaBarsStaggered className="relative block ml-2 sm:hidden" onClick={toggleMenu} />
@@ -80,11 +83,11 @@ console.log(booksInfo)
             <>
               {/* dropdown */}
               <div className="relative mr-10 flex justify-center items-center ">
-               
+
                 <Link to={'dashboard/savedBooks'}><button className="rounded-full p-2 bg-gray-100 "><BsCartCheck className="text-2xl" /></button></Link>
                 <span className="absolute -top-2 -right-4 w-6 h-6 rounded-full flex justify-center items-center font-bold bg-cyan-400 text-white text-xs">{
-      booksInfo?.length
-    }</span>
+                  booksInfo?.length
+                }</span>
               </div>
               <h1 className=" hidden sm:block mr-5 uppercase font-bold">{user.displayName}</h1>
               <div className="relative mr-2 sm:mr-16">
@@ -105,11 +108,21 @@ console.log(booksInfo)
                       <h1 className="text-center mt-2 text-lg font-bold text-white uppercase">{user.displayName}</h1>
                     </div>
                     <hr className="my-5" />
-
-                    <div className="text-base font-semibold text-white flex items-center gap-2">
+ {
+                        isAdmin ?
+                       <div className="text-base font-semibold text-white flex items-center gap-2">
+                      <MdOutlineDashboardCustomize />
+                      <Link to={'/dashboard/adminHome'}>Dashboard</Link>
+                    </div>:
+                     <div className="text-base font-semibold text-white flex items-center gap-2">
+                     
                       <MdOutlineDashboardCustomize />
                       <Link to={'dashboard/userHome'}>Dashboard</Link>
                     </div>
+                      }
+                    
+
+                   
                     <div className="text-base font-semibold text-white flex items-center gap-2">
                       <IoSettingsOutline />
                       <Link>Settings</Link>

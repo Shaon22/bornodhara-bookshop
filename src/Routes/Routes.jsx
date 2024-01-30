@@ -13,6 +13,8 @@ import SavedBooks from "../Dashboard/UserDashboard/SavedBooks";
 import Orders from "../Dashboard/UserDashboard/Orders";
 import Books from "../Dashboard/AdminDashboard/Books";
 import AdminHome from "../Dashboard/AdminDashboard/AdminHome";
+import UseUserInfo from "../Hooks/UseUserInfo.jsx/UseUserInfo";
+import Users from "../Dashboard/AdminDashboard/Users";
 
 export const router = createBrowserRouter([
     {
@@ -60,10 +62,7 @@ export const router = createBrowserRouter([
                 element: <UserHome></UserHome>
 
             },
-            {
-                path:'adminHome',
-                element:<AdminHome></AdminHome>
-            },
+           
             {
                 path: 'savedBooks',
                 element:<SavedBooks></SavedBooks>
@@ -72,11 +71,19 @@ export const router = createBrowserRouter([
            {
             path:'orders',
             element:<Orders></Orders>
-           },
+           }, 
+           {
+                path:'adminHome',
+                element:<AdminHome></AdminHome>
+            },
            {
             path:'books',
             element:<Books></Books>,
             loader: () => fetch`http://localhost:5000/allBooks`
+           },
+           {
+            path:'users',
+            element:<Users></Users>
            }
         ]
     }

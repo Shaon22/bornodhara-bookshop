@@ -15,7 +15,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(MyContext)
   const [booksInfo, refetch] = UseCartItemsInfo()
   console.log(booksInfo)
-  refetch()
+  
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -34,6 +34,7 @@ const Navbar = () => {
         console.log(result)
       })
   }
+  refetch()
   const navlinks =
     <div className=" text-lg font-semibold space-x-10 sm:">
       <>

@@ -36,7 +36,7 @@ const DashboardLayout = () => {
                                     <NavLink to={'users'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Users</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={'boo'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Pending Orders</NavLink>
+                                    <NavLink to={'pendingOrders'} className={({ isActive }) => (isActive ? 'text-white' : 'text-black')}>Pending Orders</NavLink>
                                 </li>
 
                             </ul>

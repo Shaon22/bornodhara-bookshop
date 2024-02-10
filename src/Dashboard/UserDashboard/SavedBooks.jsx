@@ -11,10 +11,9 @@ import Swal from "sweetalert2";
 import UseCartItemsInfo from "../../Hooks/UsecartItemsInfo/UseCartItemsInfo";
 import { useContext } from "react";
 import { MyContext } from "../../AuthProvider/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import axios from "axios";
+import moment from "moment";
 const SavedBooks = () => {
-
+  const time=moment().format('MMMM Do YYYY, h:mm:ss a');
   const { user } = useContext(MyContext)
   const axiosPublic = useAxiosPublic()
   const [booksInfo, refetch] = UseCartItemsInfo()
@@ -46,7 +45,7 @@ const SavedBooks = () => {
     });
   }
   const orderInfo = {
-    booksInfo, email: user.email
+    booksInfo, email: user.email,time,status:'Pending'
   }
   const handleOrder = () => {
     if (booksInfo?.length > 0) {

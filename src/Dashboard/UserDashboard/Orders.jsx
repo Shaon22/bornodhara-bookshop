@@ -23,7 +23,16 @@ const Orders = () => {
                         <div className="text-center">
                             <h1 className="text-lg font-bold underline">Order Details</h1>
                             <h1>{item.time}</h1>
-                            <h1 className="flex justify-center items-center text-lg capitalize font-bold text-yellow-300">{item.status}<CiDeliveryTruck className="text-2xl"/></h1>
+                            {
+                                item.status == 'delivered' ?
+                                <button className="btn sm:btn-sm btn-xs bg-green-500 text-white border-none">
+                                <h1 className="flex justify-center items-center text-lg capitalize font-bold">{item.status}<CiDeliveryTruck className="text-2xl" /></h1>
+                            </button> :
+                                    <button className="btn sm:btn-sm btn-xs bg-cyan-400  border-none">
+                                        <h1 className="flex justify-center items-center text-lg capitalize font-bold text-yellow-300">{item.status}<CiDeliveryTruck className="text-2xl" /></h1>
+                                    </button>
+
+                            }
                         </div>
                     </div>
                 )

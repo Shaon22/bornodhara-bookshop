@@ -15,6 +15,7 @@ import Books from "../Dashboard/AdminDashboard/Books";
 import AdminHome from "../Dashboard/AdminDashboard/AdminHome";
 import Users from "../Dashboard/AdminDashboard/Users";
 import PendingOrders from "../Dashboard/AdminDashboard/PendingOrders";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -74,20 +75,20 @@ export const router = createBrowserRouter([
            }, 
            {
                 path:'adminHome',
-                element:<AdminHome></AdminHome>
+                element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
             },
            {
             path:'books',
-            element:<Books></Books>,
+            element:<AdminRoute><Books></Books></AdminRoute>,
             loader: () => fetch`http://localhost:5000/allBooks`
            },
            {
             path:'users',
-            element:<Users></Users>
+            element:<AdminRoute><Users></Users></AdminRoute>
            },
            {
             path:'pendingOrders',
-            element:<PendingOrders></PendingOrders>
+            element:<AdminRoute><PendingOrders></PendingOrders></AdminRoute>
            }
         ]
     }

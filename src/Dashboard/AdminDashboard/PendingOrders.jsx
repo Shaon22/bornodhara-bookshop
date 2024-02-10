@@ -1,13 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { CiDeliveryTruck } from "react-icons/ci";
-import Button from "../../Components/Shared/Button";
+import useAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 const PendingOrders = () => {
-    const axiospubic
-const handleDelivery=(id)=>{
-    ax
-}
-    const { data: allOrders } = useQuery({
+     const { data: allOrders,refetch } = useQuery({
         queryKey: ['orders'],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/allOrders`)
@@ -15,6 +11,16 @@ const handleDelivery=(id)=>{
         }
 
     })
+    const axiospubic=useAxiosPublic()
+const handleDelivery=(id)=>{
+    axiospubic.patch(`setStatus/${id}`)
+    .then(res=>{
+        console.log(res.data) 
+        refetch()
+    })
+   
+}
+   
 
     return (
         <div >
@@ -42,7 +48,7 @@ const handleDelivery=(id)=>{
                                 <button className="btn sm:btn-sm btn-xs bg-green-500 text-white border-none">
                                 <h1 className="flex justify-center items-center text-lg capitalize font-bold">{item.status}<CiDeliveryTruck className="text-2xl" /></h1>
                             </button> :
-                                    <button className="btn sm:btn-sm btn-xs bg-cyan-400  border-none">
+                                    <button onClick={()=>handleDelivery(item._id)} className="btn sm:btn-sm btn-xs bg-cyan-400  border-none">
                                         <h1 className="flex justify-center items-center text-lg capitalize font-bold text-yellow-300">{item.status}<CiDeliveryTruck className="text-2xl" /></h1>
                                     </button>
 

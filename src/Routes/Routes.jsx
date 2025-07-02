@@ -80,7 +80,7 @@ export const router = createBrowserRouter([
            {
             path:'books',
             element:<AdminRoute><Books></Books></AdminRoute>,
-            loader: () => fetch`http://localhost:5000/allBooks`
+            loader: () => fetch`http://localhost:5001/allBooks`
            },
            {
             path:'users',

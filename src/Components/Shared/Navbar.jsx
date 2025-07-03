@@ -46,7 +46,7 @@ const Navbar = () => {
       </>
     </div>
   return (
-    <div className="navbar mx-auto bg-base-100">
+    <div className="navbar mx-auto bg-[#ffffff] fixed left-0 right-0 z-50 top-0 shadow-2xl">
 
       <div className="navbar-start">
         <div>
@@ -68,7 +68,8 @@ const Navbar = () => {
           }
         </div>
 
-        <a className="btn btn-ghost normal-case text-base font-extrabold sm:text-2xl sm:ml-12">THE <span className="text-orange-600">ATHENEUM</span></a>
+        <a className="btn btn-ghost normal-case text-base font-extrabold sm:text-2xl sm:ml-12">Borno<span className="text-orange-600">dhara</span></a>
+        
 
       </div>
       <div className="navbar-center hidden lg:flex">

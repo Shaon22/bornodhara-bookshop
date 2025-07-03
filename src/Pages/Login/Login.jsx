@@ -48,7 +48,7 @@ const Login = () => {
             
     } 
     return (
-        <div className="bg-[url('https://i.ibb.co/723JZsf/login-1.jpg')] h-screen">
+        <div className="bg-[url('https://i.ibb.co/R4YWzn6S/Books-HD-8314929977.jpg')] h-screen bg-no-repeat w-full bg-cover bg-center">
             <Link to={'/'}><button className='p-5'><FcHome className="text-2xl sm:text-4xl" /></button></Link>
             <div className='px-5'>
                 <h1 className='text-lg sm:text-2xl mb-10 font-bold text-center text-white'>Login Now</h1>
@@ -79,7 +79,7 @@ const Login = () => {
                     </form>
                     <hr className="my-5" />
                     <button onClick={handleGoogle} className="btn btn-sm w-full bg-cyan-400 border-none text-white">SIGN IN WITH<FcGoogle className="text-xl" /></button>
-                    <h1 className="text-white m-5 text-center">Dont Have any account? <Link to={'/register'} className="text-blue-600 text-lg font-bold">Register</Link></h1>
+                    <h1 className="text-white m-5 text-center">Dont Have any account? <Link to={'/register'} className="text-cyan-400 text-lg font-bold">Register</Link></h1>
                 </div>
 
             </div>

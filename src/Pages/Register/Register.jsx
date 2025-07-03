@@ -42,7 +42,7 @@ const Register = () => {
             })
     }
     return (
-        <div className="bg-[url('https://i.ibb.co/n14ssT2/register-2.jpg')] h-screen">
+        <div className="bg-[url('https://i.ibb.co/n14ssT2/register-2.jpg')] h-screen bg-no-repeat bg bg-cover bg-center">
             <Link to={'/'}><button className='p-5'><FcHome className="text-2xl sm:text-4xl" /></button></Link>
             <div className="px-5">
                 <h1 className='text-lg sm:text-2xl mb-10 font-bold text-center text-white'>Register Your Account</h1>
@@ -75,7 +75,7 @@ const Register = () => {
                     </form>
                     <hr className="my-5" />
                     <button className="btn btn-sm w-full bg-cyan-400 border-none text-white">SIGN UP WITH<FcGoogle className="text-xl" /></button>
-                    <h1 className="text-white m-5 text-center">Already Have an account? <Link to={'/login'} className="text-blue-600 text-lg font-bold">Login</Link></h1>
+                    <h1 className="text-white m-5 text-center">Already Have an account? <Link to={'/login'} className="text-cyan-400 text-lg font-bold">Login</Link></h1>
                 </div>
 
             </div>

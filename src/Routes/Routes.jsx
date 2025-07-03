@@ -16,6 +16,7 @@ import AdminHome from "../Dashboard/AdminDashboard/AdminHome";
 import Users from "../Dashboard/AdminDashboard/Users";
 import PendingOrders from "../Dashboard/AdminDashboard/PendingOrders";
 import AdminRoute from "./AdminRoute";
+import Category from "../Pages/Home/category";
 
 export const router = createBrowserRouter([
     {
@@ -40,7 +41,12 @@ export const router = createBrowserRouter([
                 path: 'details/:_id',
                 element: <BooksDetails></BooksDetails>,
                 loader:({params})=> fetch(`http://localhost:5000/allbooks/${params._id}`)
-            }
+            },
+            {
+                path:'books/:category_name',
+                element:<Category></Category>,
+                loader:({params})=>fetch(`http://localhost:5000/books/${params.category_name}`)
+            },
 
         ]
     },
@@ -80,7 +86,7 @@ export const router = createBrowserRouter([
            {
             path:'books',
             element:<AdminRoute><Books></Books></AdminRoute>,
-            loader: () => fetch`http://localhost:5001/allBooks`
+            loader: () => fetch`http://localhost:5000/allBooks`
            },
            {
             path:'users',
@@ -89,8 +95,10 @@ export const router = createBrowserRouter([
            {
             path:'pendingOrders',
             element:<AdminRoute><PendingOrders></PendingOrders></AdminRoute>
-           }
+           },
+           
         ]
-    }
+    },
+    
 
 ])

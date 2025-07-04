@@ -3,18 +3,18 @@ import { MyContext } from "../../AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 
 const UseCartItemsInfo = () => {
-    const { user } = useContext(MyContext)
+  const { user } = useContext(MyContext);
 
-    const { data: booksInfo,refetch } = useQuery({
-      queryKey: ['books'],
-      queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/cart/${user.email}`)
-        return res.json()
-      }
-  
-    })
-    console.log(booksInfo)
-    return [booksInfo,refetch]
+  const { data: booksInfo = [], refetch, isLoading } = useQuery({
+    enabled: !!user?.email, // ✅ Only run if user email exists
+    queryKey: ["books", user?.email], // ✅ Key includes user email for cache isolation
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/cart/${user.email}`);
+      return res.json();
+    },
+  });
+
+  return [booksInfo, refetch, isLoading];
 };
 
 export default UseCartItemsInfo;

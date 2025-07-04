@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'books/:category_name',
-                element:<Category></Category>,
+                element:<ProtectedRoute><Category></Category></ProtectedRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/books/${params.category_name}`)
             },
 

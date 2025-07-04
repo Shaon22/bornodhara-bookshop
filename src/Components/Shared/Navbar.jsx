@@ -12,9 +12,9 @@ import UseAdmin from "../../Hooks/UseAdmin/UseAdmin";
 
 const Navbar = () => {
   const [isAdmin] = UseAdmin()
-  const { user, logOut } = useContext(MyContext)
+  const { user, logOut ,  updateUserProfile,} = useContext(MyContext)
   const [booksInfo, refetch] = UseCartItemsInfo()
-  console.log(booksInfo)
+  
   
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const toggleDropdown = () => {

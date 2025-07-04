@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { CgDetailsMore } from "react-icons/cg";
 const AllBooks = () => {
   const allBooks = useLoaderData();
   return (

@@ -57,7 +57,7 @@ const BooksDetails = () => {
                             Add To Cart
                         </button>
                         <button className="btn btn-sm bg-cyan-400 text-white">
-                            Read Now
+                            Read now
                         </button>
                     </div>
                 </div>

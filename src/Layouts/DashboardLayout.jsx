@@ -15,9 +15,9 @@ const DashboardLayout = () => {
                     isAdmin ?
                         <div>
                              <div className="flex justify-center " >
-                                <div className=" rounded-full ">
+                                <div className=" rounded-full w-32 h-32 ">
                                
-                                <img className="rounded-full p-1 w-32 h-32 ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
+                                <img className="rounded-full p-1w-full h-full object-contain ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
                                
                                 </div>
                             </div>
@@ -43,9 +43,9 @@ const DashboardLayout = () => {
                         </div> :
                         <div>
                             <div className="flex justify-center " >
-                                <div className=" rounded-full ">
+                                <div className=" rounded-full h-32 w-32 ">
                                
-                                <img className="rounded-full p-1  ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
+                                <img className="rounded-full p-1 w-full h-full object-contain  ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
                                
                                 </div>
                             </div>

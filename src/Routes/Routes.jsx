@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
             {
                 path: 'allBooks',
                 element: <ProtectedRoute> <AllBooks></AllBooks></ProtectedRoute>,
-                loader: () => fetch`https://brand-shop-server-ivory-alpha.vercel.app/allBooks`
+                loader: () => fetch`https://bornodhara-bookshop-server.vercel.app/allBooks`
 
             },
             {
@@ -41,12 +41,12 @@ export const router = createBrowserRouter([
             {
                 path: 'details/:_id',
                 element: <BooksDetails></BooksDetails>,
-                loader:({params})=> fetch(`https://brand-shop-server-ivory-alpha.vercel.app/allbooks/${params._id}`)
+                loader:({params})=> fetch(`https://bornodhara-bookshop-server.vercel.app/allbooks/${params._id}`)
             },
             {
                 path:'books/:category_name',
                 element:<ProtectedRoute><BooksCategory></BooksCategory></ProtectedRoute>,
-                loader:({params})=>fetch(`https://brand-shop-server-ivory-alpha.vercel.app/books/${params.category_name}`)
+                loader:({params})=>fetch(`https://bornodhara-bookshop-server.vercel.app/books/${params.category_name}`)
             },
 
         ]
@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
            {
             path:'books',
             element:<AdminRoute><Books></Books></AdminRoute>,
-            loader: () => fetch`https://brand-shop-server-ivory-alpha.vercel.app/allBooks`
+            loader: () => fetch`https://bornodhara-bookshop-server.vercel.app/allBooks`
            },
            {
             path:'users',

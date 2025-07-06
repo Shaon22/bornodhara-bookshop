@@ -4,7 +4,7 @@ const UseUserInfo = () => {
     const { data: userInfo,refetch } = useQuery({
         queryKey: ['info'],
         queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/users`)
+          const res = await fetch(`https://bornodhara-bookshop-server.vercel.app/users`)
           return res.json()
         }
     

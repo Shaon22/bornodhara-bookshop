@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosPublic=axios.create({
-    baseURL:'https://brand-shop-server-ivory-alpha.vercel.app/'
+    baseURL:'https://bornodhara-bookshop-server.vercel.app/'
 })
 const useAxiosPublic = () => {
     return axiosPublic

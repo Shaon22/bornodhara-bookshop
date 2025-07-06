@@ -55,7 +55,7 @@ const Books = () => {
                         allBooks.map((allbook, index) =>
                             <tr key={allbook._id}>
                                 <th>{index + 1}</th>
-                                <td><img className="w-[1000px]" src={allbook.imageURL} alt="" /></td>
+                                <td><img className="w-[100px]" src={allbook.imageURL} alt="Image unavailable" /></td>
                                 <td>{allbook.name}</td>
                                 <td>{allbook.author}</td>
                                 <td>{allbook.category}</td>

@@ -21,7 +21,7 @@ const Users = () => {
                         userInfo?.map((user,index) =>
                             <tr className="bg-base-200" key={user._id}>
                                 <th>{index+1}</th>
-                                <td><img src="" alt="coming soon" /></td>
+                                <td><img src={user.imageUrl} alt="" /></td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                             </tr>

@@ -15,7 +15,7 @@ const UserHome = () => {
           <div className="stat-value text-primary">{booksInfo?.length}</div>
         </div>
         <div className="stat">
-          <div className="stat-title">Order Pending</div>
+          <div className="stat-title">Orders</div>
           <div className="stat-value text-primary">{orderBook?.length}</div>
         </div>
 

@@ -29,6 +29,9 @@ const AllBooks = () => {
                 <h1 className="text-xs sm:text-base font-medium sm:mt-1">
                   Ratings: {allBook.ratings}
                 </h1>
+                <h1 className="text-xs sm:text-base font-medium sm:mt-1">
+                  Price: {allBook.price}৳
+                </h1>
               </div>
             </div>
           </div>

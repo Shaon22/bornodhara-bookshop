@@ -17,7 +17,7 @@ const DashboardLayout = () => {
                              <div className="flex justify-center " >
                                 <div className=" rounded-full ">
                                
-                                <img className="rounded-full p-1  ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
+                                <img className="rounded-full p-1 w-32 h-32 ring-8 ring-gradient-to-r from-[#bf60fe] to-[#0750d4] ring-inset" src={user.photoURL} alt="" />
                                
                                 </div>
                             </div>

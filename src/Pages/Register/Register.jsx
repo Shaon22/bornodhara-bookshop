@@ -133,7 +133,7 @@ const Register = () => {
                         const userInfo = {
                             name: data?.name,
                             email: data?.email,
-                            role: 'user'
+                            role: 'user',
                         };
 
                         axiosPublic.post('/users', userInfo)

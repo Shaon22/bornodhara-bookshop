@@ -6,14 +6,14 @@ const PendingOrders = () => {
      const { data: allOrders,refetch } = useQuery({
         queryKey: ['orders'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allOrders`)
+            const res = await fetch(`http://localhost:5000/orders`)
             return res.json()
         }
 
     })
     const axiospubic=useAxiosPublic()
 const handleDelivery=(id)=>{
-    axiospubic.patch(`setStatus/${id}`)
+    axiospubic.patch(`orders/${id}`)
     .then(res=>{
         console.log(res.data) 
         refetch()

@@ -15,6 +15,7 @@ const BooksCategory = () => {
                         <h1 className=" font-medium">Author: {book.author}</h1>
                         <h1 className="font-medium my-2">Category: {book.category}</h1>
                         <h1 className="font-medium">Ratings: {book.ratings}</h1>
+                        <h1 className="font-medium my-2">price: {book.price} Taka</h1>
                         <Link  to={`/details/${book._id}`}><button className="btn btn-wide mt-7 bg-cyan-400">Details</button></Link>
                        </div>
                         

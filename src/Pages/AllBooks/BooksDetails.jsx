@@ -12,7 +12,7 @@ const BooksDetails = () => {
     const booksInfo = useLoaderData();
     const [, refetch] = UseCartItemsInfo();
 
-    const { imageURL, name, author, category, shortDescription } = booksInfo;
+    const { imageURL, name, author, category, shortDescription, price } = booksInfo;
 
     const handleAddToCart = () => {
         const bookInfo = {
@@ -25,7 +25,7 @@ const BooksDetails = () => {
 
         axiosPublic.post("/addToCart", bookInfo).then((res) => {
             if (res.data.insertedId) {
-                toast.success("Added for read later successfully");
+                toast.success("Added to cart successfully");
                 refetch(); // ✅ Trigger cart count update in Navbar
             }
         });
@@ -47,6 +47,7 @@ const BooksDetails = () => {
                     <h1 className="text-lg font-medium my-1">Author: {author}</h1>
                     <h1 className="text-lg font-medium my-1">Category: {category}</h1>
                     <p className="font-medium my-5">{shortDescription}</p>
+                   <h1 className="text-lg font-medium my-1">Price : {price} Taka</h1>
 
                     <div className="flex flex-wrap gap-3">
                         <button

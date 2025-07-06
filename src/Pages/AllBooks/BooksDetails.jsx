@@ -38,7 +38,7 @@ const BooksDetails = () => {
             {/* Responsive layout: column on small screens, row on md+ screens */}
             <div className="flex flex-col md:flex-row gap-7 mt-10">
                 <img
-                    className="w-full md:w-[400px] h-auto object-cover p-3"
+                    className="w-full md:w-[300px] h-auto object-cover p-3"
                     src={imageURL}
                     alt=""
                 />

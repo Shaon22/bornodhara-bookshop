@@ -72,7 +72,7 @@ const Testimonial = () => {
               // Each testimonial item takes full width of its parent (which is 100% of the visible area)
               <div key={index} className="flex-shrink-0 w-full text-center">
                 <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 italic mb-6 leading-relaxed">
-                  "{testimonial.opinion}"
+                  {testimonial.opinion}
                 </p>
                 <img
                   src={testimonial.image}

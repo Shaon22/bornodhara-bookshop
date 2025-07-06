@@ -9,7 +9,7 @@ const UseCartItemsInfo = () => {
     enabled: !!user?.email, // ✅ Only run if user email exists
     queryKey: ["books", user?.email], // ✅ Key includes user email for cache isolation
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/cart/${user.email}`);
+      const res = await fetch(`https://brand-shop-server-ivory-alpha.vercel.app/cart/${user.email}`);
       return res.json();
     },
   });

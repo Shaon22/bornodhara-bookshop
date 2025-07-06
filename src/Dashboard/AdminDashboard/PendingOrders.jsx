@@ -6,7 +6,7 @@ const PendingOrders = () => {
      const { data: allOrders,refetch } = useQuery({
         queryKey: ['orders'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/orders`)
+            const res = await fetch(`https://brand-shop-server-ivory-alpha.vercel.app/orders`)
             return res.json()
         }
 

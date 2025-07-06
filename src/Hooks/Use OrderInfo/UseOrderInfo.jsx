@@ -8,7 +8,7 @@ const UseOrderInfo = () => {
     const { data: ordersInfo,refetch } = useQuery({
       queryKey: ['orders'],
       queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/orders/${user.email}`)
+        const res = await fetch(`https://brand-shop-server-ivory-alpha.vercel.app/orders/${user.email}`)
         return res.json()
       }
   

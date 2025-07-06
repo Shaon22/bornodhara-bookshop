@@ -16,7 +16,7 @@ import AdminHome from "../Dashboard/AdminDashboard/AdminHome";
 import Users from "../Dashboard/AdminDashboard/Users";
 import PendingOrders from "../Dashboard/AdminDashboard/PendingOrders";
 import AdminRoute from "./AdminRoute";
-import Category from "../Pages/Home/category";
+import BooksCategory from "../Pages/Home/BooksCategory";
 
 
 export const router = createBrowserRouter([
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'books/:category_name',
-                element:<ProtectedRoute><Category></Category></ProtectedRoute>,
+                element:<ProtectedRoute><BooksCategory></BooksCategory></ProtectedRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/books/${params.category_name}`)
             },
 

@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 
-const Category = () => {
+const BooksCategory = () => {
     const books=useLoaderData()
     console.log(books)
     return (
@@ -26,4 +26,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default BooksCategory;

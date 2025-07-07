@@ -1,8 +1,10 @@
-# React + Vite
+Bornodhara-bookshop is a ecommerce platform where booklovers can buy their desired book.
+Live link:https://bornodhara-bookshop.vercel.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key features:
+1.User can choose books by category
+2.Email password based authenticaton. 
+3.Login with google funtionality.
+4.Profile picture upload fuctionality.
+5.Add to cart option.
+6.Using dashboard user can track order status.

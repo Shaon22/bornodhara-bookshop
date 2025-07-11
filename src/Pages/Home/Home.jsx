@@ -1,5 +1,6 @@
 import About from "./About";
 import Categories from "./Categories";
+import Payments from "./Payments";
 import Testimonial from "./Testimonial";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
            <About></About>
            <Categories></Categories>
            <Testimonial></Testimonial>
+           <Payments></Payments>
         </div>
     );
 };

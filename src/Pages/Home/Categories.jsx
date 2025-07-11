@@ -41,7 +41,7 @@ const Categories = () => {
                 {Category.category_name}
               </h1>
               <Link to={`/books/${Category.category_name}`}>
-                <button className="btn btn-sm bg-cyan-400 text-white">
+                <button className="btn btn-sm bg-cyan-400 text-white hover:bg-cyan-600">
                   See all
                 </button>
               </Link>
